@@ -47,6 +47,24 @@ body {
 @media (max-width: 576px) {
   .card { padding: 10px; }
 }
+@media (max-width: 768px) {
+  .navbar .d-flex.flex-wrap {
+    justify-content: center;
+    gap: 10px;
+  }
+  .navbar .form-control {
+    width: 100%;
+  }
+}
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn:active:hover {
+  background-color: #198754 !important; /* نفس لون البوتون الأساسي */
+}
+
 
    
     
