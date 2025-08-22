@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenCycle Hub - Downtown</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link
+ <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <!-- Logo -->
+    
+
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Locations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+
+      <!-- Google-like Search Bar -->
+      <form class="d-flex me-3">
+        <div class="position-relative" style="width: 220px;">
+          <input class="form-control form-control-sm ps-5 rounded-pill" type="search" placeholder="Search locations..." style="border-radius: 50px;">
+          <i class="bi bi-search position-absolute" style="top: 50%; left: 15px; transform: translateY(-50%); color: #888;"></i>
+        </div>
+      </form>
+
+      <!-- Icons -->
+      <a href="#" class="me-3"><i class="bi bi-bell fs-5"></i></a>
+      <a href="#" class="me-3"><i class="bi bi-person fs-5"></i></a>
+
+      <!-- User Profile Circle -->
+      <a href="#" class="d-flex align-items-center">
+        <img src="./img/user 2.webp" alt="User" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Header Section -->
+<div class="container my-4" class="green" id="green1">
+  <div class="p-4 bg-light rounded" class="green" id="green1">
+    <h2>GreenCycle Hub - Downtown</h2>
+    <p><i class="bi bi-geo-alt"></i> 123 Eco Avenue, Springfield, SA 12345</p>
+    <button class="btn btn-success me-2">Get Directions</button>
+    <button class="btn btn-outline-success">Call (555) 123-4567</button>
+  </div>
+</div>
+
+<!-- Info Cards -->
+<div class="container mb-4">
+  <div class="row g-4">
+    <!-- Location Details -->
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h5>Location Details</h5>
+        <!-- Operating Hours -->
+          <p class="fw-semibold mb-2"><i class="fa-regular fa-clock me-2 text-secondary"></i> Operating Hours</p>
+          <div class="ms-3 mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span>Monday:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span>Tuesday:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span>Wednesday:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span>Thursday:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span>Friday:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span>Saturday:</span>
+              <span>10:00 AM - 2:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span>Sunday:</span>
+              <span class="text-muted">Closed</span>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <p class="fw-semibold mb-2"><i class="fa-solid fa-phone"></i>Contact Info</p>
+          <ul class="list-unstyled ms-3 small">
+            <li><strong>Phone:</strong> (555) 123-4567</li>
+            <li><strong>Email:</strong> <a href="mailto:info@greencyclehub.com" class="text-success text-decoration-none">info@greencyclehub.com</a></li>
+            <li><strong>Website:</strong> <a href="http://www.greencyclehub.com" target="_blank" class="text-success text-decoration-none">www.greencyclehub.com</a></li>
+          </ul>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h5>Map & Directions</h5>
+       <div id="map" style="height: 250px; border-radius: 8px;"></div>
+       <br>
+       <p>Easily find GreenCycleHub - Downtown Using<br> the map above or get detailed direction </p>
+       
+       <a href="https://www.google.com/maps/place/Egypt" target="_blank" class="btn btn-success btn-sm" style="width: 160px;">
+  view on google map
+</a>
+
+      </div>
+    </div>
+    
+    <!-- Accepted Materials -->
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h5>Accepted Materials</h5>
+       <h6 class="mt-3"><i class="fa-solid fa-paperclip"></i></i> Paper & Cardboard</h6>
+    <ul class="list-unstyled ms-3">
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Newspapers & Magazines</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Cardboard Boxes (flattened)</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Mixed Paper (junk mail, office paper)</li>
+    </ul>
+
+    <!-- Plastics -->
+    <h6 class="mt-3"><i class="fa-solid fa-bottle-water me-2 text-secondary"></i> Plastics (Numbered)</h6>
+    <ul class="list-unstyled ms-3">
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> PET (1) bottles & containers</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> HDPE (2) jugs & bottles</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Mixed Plastics (3-7) - check local guidelines</li>
+    </ul>
+
+    <!-- Glass -->
+    <h6 class="mt-3"><i class="fa-solid fa-glass-water-droplet"></i></i> Glass</h6>
+    <ul class="list-unstyled ms-3">
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Clear Glass bottles & jars</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Brown Glass bottles & jars</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Green Glass bottles & jars</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> No broken glass or ceramics</li>
+    </ul>
+
+    <!-- Metals -->
+    <h6 class="mt-3"><i class="fa-solid fa-industry me-2 text-secondary"></i> Metals</h6>
+    <ul class="list-unstyled ms-3">
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Aluminum Cans</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Steel & Tin Cans</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Aluminum Foil (clean)</li>
+    </ul>
+
+    <!-- Electronics -->
+    <h6 class="mt-3"><i class="fa-solid fa-desktop me-2 text-secondary"></i> Electronics (E-Waste)</h6>
+    <ul class="list-unstyled ms-3">
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Batteries (AA, AAA, 9V, D)</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Small Appliances (toasters, blenders)</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Cell Phones & Tablets</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Printers & Keyboards</li>
+    </ul>
+
+    <!-- Special Items -->
+    <h6 class="mt-3"><i class="fa-regular fa-lightbulb me-2 text-secondary"></i> Special Items</h6>
+    <ul class="list-unstyled ms-3">
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Fluorescent Light Bulbs (fee may apply)</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Used Cooking Oil (in sealed containers)</li>
+      <li><i class="fa-regular fa-circle-check text-success me-2"></i> Textiles (clean, dry clothing and fabric)</li>
+    </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- User Reviews -->
+<div class="container mb-4">
+  <div class="row g-4">
+    <div class="col-md-8">
+      <div class="card shadow-sm p-4 h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">User Reviews</h5>
+          <div class="me-2">
+            <span class="text-success">★★★★★ 4.7</span> 
+            <small class="text-muted">(85 reviews)</small>
+          </div>
+        </div>
+        
+        <div class="border-bottom py-2 d-flex align-items-start">
+  <img src="./img/user 1.jpg" alt="User" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+  <div>
+    <strong>Rowyna</strong> <span class="text-success">★★★★★</span>
+    <p class="mb-0">So easy to use! They accept a wide range of materials and the instructions are very clear.</p>
+  </div>
+</div>
+        <div class="border-bottom py-2 d-flex align-items-start">
+  <img src="./img/user 3.webp" alt="User" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+  <div>
+    <strong>Mohammed</strong> <span class="text-success">★★★★☆</span>
+    <p class="mb-0">So easy to use! They accept a wide range of materials and the instructions are very clear.</p>
+  </div>
+</div>
+
+<div class="border-bottom py-2 d-flex align-items-start">
+  <img src="./img/user 2.webp" alt="User" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+  <div>
+    <strong>Rawan</strong> <span class="text-success">★★★★★</span>
+    <p class="mb-0">So easy to use! They accept a wide range of materials and the instructions are very clear.</p>
+  </div>
+</div>
+
+<div class="pt-2 d-flex align-items-start">
+  <img src="./img/user 4.avif" alt="User" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+  <div>
+    <strong>Ahmed</strong> <span class="text-success">★★★☆☆</span>
+    <p class="mb-0">Decent overall. A bit crowded on weekends, but efficient enough for everyday items.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script src="script.js"></script>
+</body>
+</html>

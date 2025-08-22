@@ -1,0 +1,33 @@
+body {
+      background-color:white;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .review-star {
+      color: #28a745;
+    }
+    .green{
+      background-color: #28a745;
+    }
+    .custom-popup .leaflet-popup-content-wrapper {
+    background-color: #e8f5e9; /* أخضر فاتح */
+    color: #1b5e20; /* أخضر غامق */
+    border: 2px solid #388e3c;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+  .custom-popup .leaflet-popup-tip {
+    background-color: #e8f5e9;
+  }
+  .directions-btn {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+  }
+  .directions-btn:hover {
+    background-color: #388e3c;}
+   
+    
