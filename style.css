@@ -29,5 +29,24 @@ body {
   }
   .directions-btn:hover {
     background-color: #388e3c;}
+    @media (max-width: 576px) {
+  #map { height: 180px; }
+}
+@media (max-width: 576px) {
+  .reviews img { width: 30px; height: 30px; }
+}
+@media (max-width: 576px) {
+  .btn { display: block; width: 100%; margin-bottom: 10px; }
+}
+@media (max-width: 768px) {
+  .navbar .form-control { width: 150px; font-size: 14px; }
+}
+@media (max-width: 576px) {
+  .navbar .form-control { width: 100%; margin-bottom: 10px; }
+}
+@media (max-width: 576px) {
+  .card { padding: 10px; }
+}
+
    
     
